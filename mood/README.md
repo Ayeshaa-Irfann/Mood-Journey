@@ -1,57 +1,61 @@
-# Project Setup
+# Mood Journey
 
-## 🔧 Frontend Configuration
-
-1. Navigate to the frontend directory.
-2. Create or edit the `.env` file.
-3. Add your backend URL:
-
-```env
-VITE_URL=http://localhost:4000
-```
-
-> Replace `http://localhost:4000` with the actual URL of your backend.
+Mood Journey is my full-stack application, designed to create a seamless connection between the frontend and backend. It’s built to provide a smooth and efficient user experience while maintaining flexibility and scalability.
 
 ---
 
-## 🛠️ Backend Configuration
+## 🔧 Frontend Overview
 
-1. Navigate to the backend directory.
-2. Open the `.env` file.
-3. Update your Mail Data, MongoDB and database details:
+The frontend of Mood Journey is powered by Vite, offering a fast and modern development experience. It communicates with the backend through a configurable environment variable, making it adaptable to different deployment environments. By default, the backend operates on `http://localhost:4000`, but this can be adjusted to match the deployment URL.
+
+---
+
+## 🛠️ Backend Overview
+
+The backend is the backbone of my application, built with Node.js and MongoDB. It handles database connectivity and email services, relying on environment variables for sensitive configurations. These variables, stored in the `.env` file, include:
+
+- **MongoDB URI**: Ensures a secure connection to the database.
+- **Mail Host and Credentials**: Powers the email services used in the application.
+
+An example `.env` structure looks like this:
 
 ```env
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
-```
-
-> Replace `<username>`, `<password>`, and `<dbname>` with your actual MongoDB credentials and database name.
-
-```env
 MAIL_HOST="mail.skillrextech.com"
 MAIL_USER="info@skillrextech.com"
-MAIL_PASWORD="T3stP@ssw0rd!"
+MAIL_PASSWORD="T3stP@ssw0rd!"
 ```
-
-> Replace `support@skillrextech.com`, `mail.skillrextech.com` and `T3stP@ssw0rd!` with your actual MAIL credentials, APP PASSWORD and host.
 
 ---
 
 ## 🚀 Running the Project
 
+Mood Journey is designed to be easy to set up and run. The process is straightforward:
+
+- For the **frontend**, dependencies are installed, and the development server is started to enable real-time updates during development.
+- For the **backend**, dependencies are installed, and the server is launched to handle API requests and database interactions.
+
 ### Frontend
-```bash
-npm install
-npm run dev
-```
+
+1. Navigate to the frontend directory:
+   cd moodFrontend
+
+2. Install dependencies:
+   npm install
+
+3. Start the development server:
+   npm run dev
 
 ### Backend
-```bash
-npm install
-node index.js
-```
+
+1. Navigate to the backend directory:
+   cd moodBackend
+
+2. Install dependencies:
+   npm install
+3. Start the server:
+   node index.js
 
 ---
 
-## ⚠️ Note
-- Never commit your `.env` files to Git.
-- Make sure the frontend `.env` is correctly pointing to your backend URL for API calls to work.
+Mood Journey represents my vision of a scalable and user-friendly application, combining modern tools and best practices to deliver a reliable and efficient experience.
