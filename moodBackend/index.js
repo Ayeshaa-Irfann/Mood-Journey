@@ -27,8 +27,9 @@ mongoose
 app.use("/api/user", require("./routes/user"));
 app.use("/api/auth", require("./routes/auth"));
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "API is Live" });
+app.use(express.static(path.join(__dirname, "../mood/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../mood/dist", "index.html"));
 });
 
 // listing of the server or server settings
