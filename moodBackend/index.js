@@ -27,9 +27,9 @@ mongoose
 app.use("/api/user", require("./routes/user"));
 app.use("/api/auth", require("./routes/auth"));
 
-app.use(express.static(path.join(__dirname, "../mood/dist")));
+app.use(express.static(path.join(__dirname, "./mood/dist")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../mood/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "./mood/dist", ".mood/index.html"));
 });
 
 // listing of the server or server settings
