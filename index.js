@@ -24,8 +24,8 @@ mongoose
   .catch((err) => console.log(err));
 
 // Main Routes
-app.use("/api/user", require("./routes/user"));
-app.use("/api/auth", require("./routes/auth"));
+app.use("/api/user", require("./moodBackend/routes/user"));
+app.use("/api/auth", require("./moodBackend/routes/auth"));
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API is Live" });
