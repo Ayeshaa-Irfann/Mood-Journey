@@ -45,11 +45,9 @@ app.post(
       const existingname = await User.findOne({ username });
 
       if (existingUser || existingname) {
-        return res
-          .status(400)
-          .json({
-            error: "Account already exists with same email or username",
-          });
+        return res.status(400).json({
+          error: "Account already exists with same email or username",
+        });
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -62,7 +60,7 @@ app.post(
         data: otp,
         goals: "",
       });
-// ***code to send code to user
+      // ***code to send code to user
       await transporter.sendMail({
         from: process.env.MAIL_USER,
         to: email,
@@ -70,7 +68,7 @@ app.post(
         text: JSON.stringify(otp),
       });
       await newUser.save();
-      
+
       res.status(200).json({
         message: "Registration successful! You can now verify your OTP.",
       });
